@@ -1,0 +1,86 @@
+\documentclass{article}
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\usepackage{shapepar}
+\usepackage{microtype}
+\usepackage{lipsum}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.9}
+\usepackage{tikz}
+\usetikzlibrary{calc,fit,intersections,folding}
+\usepackage{pstricks-add}
+\usetikzlibrary{arrows.meta,angles,arrows,quotes,backgrounds}
+\usepackage[a3paper,left=5mm,right=5mm,top=25mm,bottom=25mm]{geometry} % Ränder
+
+\newcommand{\tubecolor}{blue}
+\newcommand{\thickness}{0.5mm}
+\newcommand{\n}{2.5mm}
+
+\begin{document}
+\thispagestyle{empty}
+\begin{center}
+    \begin{tikzpicture}
+
+        \foreach\a in {0,...,6} {
+            \coordinate (c\a) at (360*\a/7: 2);
+        }
+        \foreach\a in {0,...,6} {
+            \node at (360*\a/7: 2.5) {\a};
+        }
+        \foreach\a/\b in {0/1,1/2,2/3,3/4,4/5,5/6,6/0,0/2,0/3,0/5,3/5} {
+            \draw (c\a) -- (c\b);
+        }
+    
+    \begin{scope}[xshift = 5cm, yshift = -1.8cm]
+        \node[fill] (1) at (0,4) [circle] {};
+        \node[fill] (2) at (0,3) [circle] {};
+        \node[fill] (3) at (0,2) [circle] {};
+        \node[fill] (4) at (0,1) [circle] {};
+        \node[fill] (5) at (0,0) [circle] {};
+        \draw (1) -- (2) -- (3) -- (4) -- (5);
+
+        \foreach \y in {1,...,5} {
+            \node at (1,5-\y) {\y};
+        }
+
+        %Tube 1234
+        \begin{scope}[on background layer]
+            \fill[\tubecolor] (1) circle (\n + 7*\thickness);
+            \fill[\tubecolor] (2) circle (\n + 7*\thickness);
+            \fill[\tubecolor] (3) circle (\n + 7*\thickness);
+            \fill[\tubecolor] (4) circle (\n + 7*\thickness);
+            \draw[\tubecolor] [line width = 2*(\n + 7*\thickness)] (1.center) -- (4.center);
+            
+            \fill[white] (1) circle (\n + 6*\thickness);
+            \fill[white] (2) circle (\n + 6*\thickness);
+            \fill[white] (3) circle (\n + 6*\thickness);
+            \fill[white] (4) circle (\n + 6*\thickness);
+            \draw[white] [line width = 2*(\n + 6*\thickness)] (1.center) -- (4.center);
+        \end{scope}
+
+        %Tube 12
+        \begin{scope}[on background layer]
+            \fill[\tubecolor] (1) circle (\n + 3*\thickness);
+            \fill[\tubecolor] (2) circle (\n + 3*\thickness);
+            \draw[\tubecolor] [line width = 2*(\n + 3*\thickness)] (1.center) -- (2.center);
+            
+            \fill[white] (1) circle (\n + 2*\thickness);
+            \fill[white] (2) circle (\n + 2*\thickness);
+            \draw[white] [line width = 2*(\n + 2*\thickness)] (1.center) -- (2.center);
+        \end{scope}
+        %Tube 1
+        \begin{scope}[on background layer]
+            \fill[\tubecolor] (1) circle (\n + 1*\thickness);
+            
+            \fill[white] (1) circle (\n + 0*\thickness);
+        \end{scope}
+        %Tube 4
+        \begin{scope}[on background layer]
+            \fill[\tubecolor] (4) circle (\n + 1*\thickness);
+            
+            \fill[white] (4) circle (\n + 0*\thickness);
+        \end{scope}
+    \end{scope}
+\end{tikzpicture}
+\end{center}
+\end{document}

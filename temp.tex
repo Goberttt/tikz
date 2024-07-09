@@ -1,0 +1,69 @@
+\documentclass{article}
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\usepackage{shapepar}
+\usepackage{microtype}
+\usepackage{lipsum}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.9}
+\usepackage{tikz}
+\usetikzlibrary{calc,fit,intersections,folding}
+\usepackage{pstricks-add}
+\usetikzlibrary{arrows.meta,angles,arrows,quotes,backgrounds,calc}
+\usepackage[left = 5mm, right = 5mm, top = 5mm, bottom = 5mm]{geometry}
+
+\newcommand{\offsetx}{0.4}
+\newcommand{\offsety}{0.6}
+
+\setlength{\parindent}{0em}
+
+\newcommand{\cube}{
+\begin{tikzpicture}
+    \foreach\x in {0,1} {
+        \foreach\y in {0,1} {
+            \foreach\z in {0,1} {
+                \coordinate (\x\y\z) at (\x+\offsetx*\z, \y+\offsety*\z);
+                \fill (\x\y\z) circle (1pt);
+            }
+        }
+    }
+    \foreach\x in {0} {
+        \foreach\y in {0,1} {
+            \foreach\z in {0,1} {
+                \draw (\x\y\z) -- (1\y\z);
+            }
+        }
+    }
+    \foreach\x in {0,1} {
+        \foreach\y in {0} {
+            \foreach\z in {0,1} {
+                \draw (\x\y\z) -- (\x1\z);
+            }
+        }
+    }
+    \foreach\x in {0,1} {
+        \foreach\y in {0,1} {
+            \foreach\z in {0} {
+                \draw (\x\y\z) -- (\x\y1);
+            }
+        }
+    }
+\end{tikzpicture}
+}
+
+\newcommand{\hypercube}{\includegraphics[scale = 0.1]{Hypercube.png}}
+
+\newcommand{\clrone}{blue}
+\newcommand{\clrtwo}{red}
+
+\begin{document}
+\thispagestyle{empty}
+
+\foreach\i in {1,...,5} {
+    \vspace*{3mm}
+    \foreach\j in {1,...,5}{\hypercube\hspace{2mm}}
+    \\
+}
+
+
+\end{document}

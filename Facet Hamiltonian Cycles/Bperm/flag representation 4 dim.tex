@@ -1,0 +1,97 @@
+\documentclass{article}
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\usepackage{shapepar}
+\usepackage{microtype}
+\usepackage{lipsum}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.9}
+\usepackage{tikz}
+\usetikzlibrary{calc,fit,intersections,folding}
+\usepackage{pstricks-add}
+\usetikzlibrary{arrows.meta,angles,arrows,quotes,backgrounds,calc}
+\usepackage[left = 5mm, right = 5mm, top = 5mm, bottom = 5mm]{geometry}
+
+
+\newcommand{\offsetx}{0.4}
+\newcommand{\offsety}{0.6}
+\newcommand{\offsetxx}{0.2}
+\newcommand{\offsetyy}{0.3}
+
+
+\newcommand{\hypercube}{
+    \foreach\x in {-1,1} {
+        \foreach\y in {-1,1} {
+            \foreach\z in {-1,1} {
+                \coordinate (\x\y\z-1) at (\x+\offsetx*\z, \y+\offsety*\z);
+            }
+        }
+    }
+    \foreach\x in {-1,1} {
+        \foreach\y in {-1,1} {
+            \foreach\z in {-1,1} {
+                \coordinate (\x\y\z1) at (0.5\x+\offsetxx*\z, 0.5\y+\offsetyy*\z);
+            }
+        }
+    }
+
+    
+    \foreach\a in {-1} {
+        \foreach\b in {-1,1} {
+            \foreach\c in {-1,1} {
+                \foreach\d in {-1,1} {
+                    \draw[very thin, \if\d 1{dashed}\fi] (\a\b\c\d) -- (1\b\c\d);
+                }
+            }
+        }
+    }
+    \foreach\a in {-1,1} {
+        \foreach\b in {-1} {
+            \foreach\c in {-1,1} {
+                \foreach\d in {-1,1} {
+                    \draw[very thin, \if\d 1{dashed}\fi] (\a\b\c\d) -- (\a1\c\d);
+                }
+            }
+        }
+    }
+    \foreach\a in {-1,1} {
+        \foreach\b in {-1,1} {
+            \foreach\c in {-1} {
+                \foreach\d in {-1,1} {
+                    \draw[very thin, \if\d 1{dashed}\fi] (\a\b\c\d) -- (\a\b1\d);
+                }
+            }
+        }
+    }
+    \foreach\a in {-1,1} {
+        \foreach\b in {-1,1} {
+            \foreach\c in {-1,1} {
+                \foreach\d in {-1} {
+                    \draw[dashed] (\a\b\c\d) -- (\a\b\c1);
+                }
+            }
+        }
+    }
+}
+
+
+\setlength{\parindent}{0em}
+
+\newcommand{\clrone}{blue}
+\newcommand{\clrtwo}{green!90!black}
+\newcommand{\clrthree}{red!90!black}
+
+\newcommand{\xshft}{2cm}
+\newcommand{\yshft}{-3cm}
+
+\begin{document}
+\thispagestyle{empty}
+
+\begin{tikzpicture}[scale = 0.7]
+
+\hypercube
+    
+\end{tikzpicture}
+
+
+\end{document}

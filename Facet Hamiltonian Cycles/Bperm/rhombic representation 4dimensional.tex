@@ -1,0 +1,202 @@
+
+\documentclass{article}
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\usepackage{shapepar}
+\usepackage{microtype}
+\usepackage{lipsum}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.9}
+\usepackage{tikz}
+\usetikzlibrary{calc,fit,intersections,folding}
+\usepackage{pstricks-add}
+\usetikzlibrary{arrows.meta,angles,arrows,quotes,backgrounds,calc}
+\usepackage[left = 5mm, right = 5mm, top = 5mm, bottom = 5mm]{geometry}
+
+
+
+\setlength{\parindent}{0em}
+
+\newcommand{\clrone}{blue}
+\newcommand{\clrtwo}{red}
+
+\begin{document}
+\thispagestyle{empty}
+
+\begin{tikzpicture}[scale = 0.6]
+\choordinate (0000) at (0, 0.5);
+\choordinate (0010) at (0, 1.5);
+\choordinate (1010) at (0, 3.5);
+\choordinate (1000) at (0, 6.0);
+\choordinate (1100) at (0, 8.5);
+\choordinate (1110) at (0, 11.0);
+\choordinate (1111) at (0, 13.5);
+\choordinate (1101) at (0, 16.0);
+\choordinate (1001) at (0, 18.0);
+\choordinate (1011) at (0, 19.5);
+\choordinate (0011) at (0, 21.0);
+\choordinate (0001) at (0, 23.0);
+\choordinate (0101) at (0, 25.0);
+\choordinate (0111) at (0, 27.0);
+\choordinate (0110) at (0, 29.0);
+\choordinate (0100) at (0, 30.5);
+\choordinate (0000e) at (0, 32);
+\choordinate (x000) at (2, 0);
+\choordinate (00x0) at (2, 1);
+\choordinate (x010) at (2, 2);
+\choordinate (1x10) at (2, 3);
+\choordinate (101x) at (2, 4);
+\choordinate (10x0) at (2, 5);
+\choordinate (100x) at (2, 6);
+\choordinate (1x00) at (2, 7);
+\choordinate (110x) at (2, 8);
+\choordinate (x100) at (2, 9);
+\choordinate (11x0) at (2, 10);
+\choordinate (x110) at (2, 11);
+\choordinate (111x) at (2, 12);
+\choordinate (x111) at (2, 13);
+\choordinate (1x11) at (2, 14);
+\choordinate (11x1) at (2, 15);
+\choordinate (x101) at (2, 16);
+\choordinate (1x01) at (2, 17);
+\choordinate (x001) at (2, 18);
+\choordinate (10x1) at (2, 19);
+\choordinate (x011) at (2, 20);
+\choordinate (001x) at (2, 21);
+\choordinate (00x1) at (2, 22);
+\choordinate (000x) at (2, 23);
+\choordinate (0x01) at (2, 24);
+\choordinate (010x) at (2, 25);
+\choordinate (01x1) at (2, 26);
+\choordinate (0x11) at (2, 27);
+\choordinate (011x) at (2, 28);
+\choordinate (0x10) at (2, 29);
+\choordinate (01x0) at (2, 30);
+\choordinate (0x00) at (2, 31);
+\choordinate (x0x0) at (4, 1.0);
+\choordinate (xx10) at (4, 2.5);
+\choordinate (1xx0) at (4, 3.0);
+\choordinate (1x1x) at (4, 3.5);
+\choordinate (10xx) at (4, 5.0);
+\choordinate (1x0x) at (4, 7.0);
+\choordinate (11xx) at (4, 8.0);
+\choordinate (x10x) at (4, 8.5);
+\choordinate (x1x0) at (4, 10.0);
+\choordinate (x11x) at (4, 12.0);
+\choordinate (xx11) at (4, 13.5);
+\choordinate (1xx1) at (4, 14.5);
+\choordinate (x1x1) at (4, 15.5);
+\choordinate (xx01) at (4, 17.0);
+\choordinate (x0x1) at (4, 19.0);
+\choordinate (x01x) at (4, 20.5);
+\choordinate (00xx) at (4, 22.0);
+\choordinate (x00x) at (4, 23.0);
+\choordinate (0x0x) at (4, 24.0);
+\choordinate (01xx) at (4, 25.5);
+\choordinate (0xx1) at (4, 26.5);
+\choordinate (0x1x) at (4, 28.0);
+\choordinate (0xx0) at (4, 30.0);
+\choordinate (xx00e) at (4, 32);
+\choordinate (xxx0) at (6, 2.0);
+\choordinate (1xxx) at (6, 5.5);
+\choordinate (x1xx) at (6, 10.0);
+\choordinate (xx1x) at (6, 12.75);
+\choordinate (xxx1) at (6, 16.25);
+\choordinate (x0xx) at (6, 21.0);
+\choordinate (xx0x) at (6, 23.5);
+\choordinate (0xxx) at (6, 27.0);
+\choordinate (xxx0e) at (6, 32);
+
+\foreach \a/\b in {0000/x0000000/00x00000/0x000010/00x00010/x0100010/x0101010/x0101010/1x101010/1x101010/1x101010/1x101010/101x1010/101x1010/10x01000/10x01000/100x1000/100x1000/1x001100/1x001100/110x1100/110x1100/110x1100/110x1100/x1001100/x1001100/11x01110/11x01110/x1101110/x1101110/111x1111/111x1111/x1111111/x1111111/x1111111/1x111111/1x111111/1x111111/11x11101/11x11101/11x11101/x1011101/x1011101/1x011001/1x011001/x0011001/x0011001/10x11011/10x11011/x0111011/x0111011/x0110011/x0110011/001x0011/001x0011/00x10001/00x10001/000x0001/000x0001/000x0001/000x0001/0x010101/0x010101/010x0101/010x0101/010x0101/01x10111/01x10111/01x10111/0x110111/0x110111/011x0110/011x0110/0x100110/0x100110/01x00100/01x00100/01x00100/0x000100/0x000000/x0000000/00x00000/0x00x000/x0x000x0/x0x000x0/x0x0x010/x0x0x010/xx10x010/xx101x10/xx101x10/1xx01x10/1xx01x10/1x1x101x/1x1x101x/10xx10x0/10xx10x0/10xx100x/10xx100x/1x0x1x00/1x0x1x00/1x0x110x/1x0x110x/11xx110x/11xx110x/x10xx100/x10xx100/x1x011x0/x1x011x0/x1x0x110/x1x0x110/x11x111x/x11x111x/x11xx111/x11xx111/x11xx111/xx111x11/xx111x11/xx111x11/1xx111x1/1xx111x1/1xx111x1/x1x1x101/x1x1x101/xx011x01/xx011x01/xx01x001/xx01x001/x0x110x1/x0x110x1/x0x1x011/x0x1x011/x0x1x011/x01xx011/x01x001x/x01x001x/00xx00x1/00xx00x1/00xx000x/00xx000x/x00x000x/x00x000x/0x0x0x01/0x0x0x01/0x0x010x/0x0x010x/0x0x010x/01xx01x1/01xx01x1/01xx01x1/0xx10x11/0xx10x11/0x1x011x/0x1x011x/0x1x0x10/0x1x0x10/0xx001x0/0xx001x0/0xx001x0/0xx00x00/0xx00x00/xx000x00/xx00x0x0/xxx0x0x0/xxx0x0x0/xxx0x0x0/xxx0x0x0/xxx0x0x0/xxx0x0x0/xxx0x0x0/xxx0xx10/xxx0xx10/xxx0xx10/xxx0xx10/xxx0xx10/xxx0xx10/xxx01xx0/xxx01xx0/1xxx1xx0/xxx01x1x/1xxx1x1x/1xxx10xx/1xxx10xx/1xxx10xx/1xxx10xx/1xxx1x0x/1xxx1x0x/1xxx1x0x/1xxx1x0x/1xxx11xx/1xxx11xx/x1xxx10x/x1xxx10x/x1xxx1x0/x1xxx1x0/x1xxx1x0/x1xxx1x0/x1xxx11x/x1xxx11x/x1xxx11x/x1xxx11x/x1xxx11x/xx1xxx11/xx1xxx11/xx1xxx11/xxx11xx1/xxx11xx1/xxx11xx1/xxx1x1x1/xxx1x1x1/xxx1xx01/xxx1xx01/xxx1xx01/xxx1xx01/xxx1x0x1/xxx1x0x1/xxx1x0x1/xxx1x0x1/xxx1x0x1/x0xxx01x/x0xxx01x/x0xxx01x/x0xx00xx/x0xx00xx/x0xx00xx/x0xx00xx/x0xxx00x/x0xxx00x/xx0x0x0x/xx0x0x0x/xx0x0x0x/xx0x0x0x/xx0x0x0x/0xxx01xx/0xxx01xx/0xxx01xx/0xxx0xx1/0xxx0xx1/0xxx0x1x/0xxx0x1x/0xxx0x1x/0xxx0x1x/0xxx0xx0/xxx00xx0/xxx00xx0/0xxx0xx0/0xxx0xx0/0xxx0xx0/xxx00xx0/xxx0xx00/xxx0xx00/xxx0xx00/xxx0xx00/xxx0}
+{\draw (\a) -- (\b);}
+
+\node[draw, fill = white] at (0000) {$0000$};
+\node[draw, fill = white] at (0010) {$0010$};
+\node[draw, fill = white] at (1010) {$1010$};
+\node[draw, fill = white] at (1000) {$1000$};
+\node[draw, fill = white] at (1100) {$1100$};
+\node[draw, fill = white] at (1110) {$1110$};
+\node[draw, fill = white] at (1111) {$1111$};
+\node[draw, fill = white] at (1101) {$1101$};
+\node[draw, fill = white] at (1001) {$1001$};
+\node[draw, fill = white] at (1011) {$1011$};
+\node[draw, fill = white] at (0011) {$0011$};
+\node[draw, fill = white] at (0001) {$0001$};
+\node[draw, fill = white] at (0101) {$0101$};
+\node[draw, fill = white] at (0111) {$0111$};
+\node[draw, fill = white] at (0110) {$0110$};
+\node[draw, fill = white] at (0100) {$0100$};
+\node[draw, fill = white] at (0000) {$0000$};
+\node[draw, fill = white, opacity = 0.5] at (0000e) {$0000$};
+\node[draw, fill = white] at (x000) {$x000$};
+\node[draw, fill = white] at (00x0) {$00x0$};
+\node[draw, fill = white] at (x010) {$x010$};
+\node[draw, fill = white] at (1x10) {$1x10$};
+\node[draw, fill = white] at (101x) {$101x$};
+\node[draw, fill = white] at (10x0) {$10x0$};
+\node[draw, fill = white] at (100x) {$100x$};
+\node[draw, fill = white] at (1x00) {$1x00$};
+\node[draw, fill = white] at (110x) {$110x$};
+\node[draw, fill = white] at (x100) {$x100$};
+\node[draw, fill = white] at (11x0) {$11x0$};
+\node[draw, fill = white] at (x110) {$x110$};
+\node[draw, fill = white] at (111x) {$111x$};
+\node[draw, fill = white] at (x111) {$x111$};
+\node[draw, fill = white] at (1x11) {$1x11$};
+\node[draw, fill = white] at (11x1) {$11x1$};
+\node[draw, fill = white] at (x101) {$x101$};
+\node[draw, fill = white] at (1x01) {$1x01$};
+\node[draw, fill = white] at (x001) {$x001$};
+\node[draw, fill = white] at (10x1) {$10x1$};
+\node[draw, fill = white] at (x011) {$x011$};
+\node[draw, fill = white] at (001x) {$001x$};
+\node[draw, fill = white] at (00x1) {$00x1$};
+\node[draw, fill = white] at (000x) {$000x$};
+\node[draw, fill = white] at (0x01) {$0x01$};
+\node[draw, fill = white] at (010x) {$010x$};
+\node[draw, fill = white] at (01x1) {$01x1$};
+\node[draw, fill = white] at (0x11) {$0x11$};
+\node[draw, fill = white] at (011x) {$011x$};
+\node[draw, fill = white] at (0x10) {$0x10$};
+\node[draw, fill = white] at (01x0) {$01x0$};
+\node[draw, fill = white] at (0x00) {$0x00$};
+\node[draw, fill = white, opacity = 0.5] at (x000e) {$x000$};
+\node[draw, fill = white] at (x0x0) {$x0x0$};
+\node[draw, fill = white] at (xx10) {$xx10$};
+\node[draw, fill = white] at (1xx0) {$1xx0$};
+\node[draw, fill = white] at (1x1x) {$1x1x$};
+\node[draw, fill = white] at (10xx) {$10xx$};
+\node[draw, fill = white] at (1x0x) {$1x0x$};
+\node[draw, fill = white] at (11xx) {$11xx$};
+\node[draw, fill = white] at (x10x) {$x10x$};
+\node[draw, fill = white] at (x1x0) {$x1x0$};
+\node[draw, fill = white] at (x11x) {$x11x$};
+\node[draw, fill = white] at (xx11) {$xx11$};
+\node[draw, fill = white] at (1xx1) {$1xx1$};
+\node[draw, fill = white] at (x1x1) {$x1x1$};
+\node[draw, fill = white] at (xx01) {$xx01$};
+\node[draw, fill = white] at (x0x1) {$x0x1$};
+\node[draw, fill = white] at (x01x) {$x01x$};
+\node[draw, fill = white] at (00xx) {$00xx$};
+\node[draw, fill = white] at (x00x) {$x00x$};
+\node[draw, fill = white] at (0x0x) {$0x0x$};
+\node[draw, fill = white] at (01xx) {$01xx$};
+\node[draw, fill = white] at (0xx1) {$0xx1$};
+\node[draw, fill = white] at (0x1x) {$0x1x$};
+\node[draw, fill = white] at (0xx0) {$0xx0$};
+\node[draw, fill = white] at (xx00) {$xx00$};
+\node[draw, fill = white, opacity = 0.5] at (xx00e) {$xx00$};
+\node[draw, fill = white] at (xxx0) {$xxx0$};
+\node[draw, fill = white] at (1xxx) {$1xxx$};
+\node[draw, fill = white] at (x1xx) {$x1xx$};
+\node[draw, fill = white] at (xx1x) {$xx1x$};
+\node[draw, fill = white] at (xxx1) {$xxx1$};
+\node[draw, fill = white] at (x0xx) {$x0xx$};
+\node[draw, fill = white] at (xx0x) {$xx0x$};
+\node[draw, fill = white] at (0xxx) {$0xxx$};
+\node[draw, fill = white] at (xxx0) {$xxx0$};
+\node[draw, fill = white, opacity = 0.5] at (xxx0e) {$xxx0$};
+
+\end{tikzpicture}
+
+\end{document}
